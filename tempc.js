@@ -27,5 +27,21 @@ function createMessage(celsius, fahrenheit) {
 }
 
 function rand(limit) {
-  return Math.random() * limit;
+  return Math.round(Math.random() * limit);
+}
+
+// Prompt the user to enter a any number
+const userInput = prompt("Enter any number");
+
+const fahrenheitTemperature = parseFloat(userInput);
+
+if (!isNaN(fahrenheitTemperature)) {
+  const celsiusTemperature = convertToCelsius(fahrenheitTemperature);
+  const randomNum = rand(10);
+  const message = createMessage(fahrenheitTemperature, celsiusTemperature);
+
+  console.log(message);
+  console.log(`Random Number: ${randomNum}`);
+} else {
+  console.log("Please enter a temperature in Fahrenheit.");
 }

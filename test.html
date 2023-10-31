@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Join the 'Conversion' Party:</h1>
-        <p>Fizzing Up 'Fahrenheit' and Chilling with 'Celsius'"</p>
+        <p>Fizzing Up 'Fahrenheit' and Chilling with 'Celsius'</p>
     </header>
     <nav>
         <ul>
@@ -40,8 +40,37 @@
                         const message = createMessage(fahrenheitTemperature, celsiusTemperature);
                         resultMessage.innerText = message;
                     } else {
-                        resultMessage.innerText = "Did you forget something? add a temperature before pressing the button";
+                        resultMessage.innerText = "Did you forget something? Add the temperature before pressing the button.";
                     }
+                }
+
+                function convertToCelsius(fahrenheit) {
+                    // Convert Fahrenheit to Celsius using the formula (F - 32) * 5/9
+                    return (fahrenheit - 32) * 5/9;
+                }
+
+                function createMessage(fahrenheit, celsius) {
+                    const message = `The temperature ${fahrenheit}°F is equal to ${celsius.toFixed(2)}°C. It feels `;
+
+                    if (fahrenheit < 32) {
+                        message += "very cold.";
+                    } else if (fahrenheit < 50) {
+                        message += "cool.";
+                    } else if (fahrenheit < 70) {
+                        message += "moderate.";
+                    } else if (fahrenheit < 90) {
+                        message += "warm.";
+                    } else {
+                        message += "hot.";
+                    }
+
+                    return message;
+                }
+
+                function rand(limit) {
+                    // Generate a random number between 0 and the specified limit using Math.round() and Math.random()
+                    const randomNum = Math.round(Math.random() * limit);
+                    console.log(`Random Number: ${randomNum}`);
                 }
             </script>
         </section>
