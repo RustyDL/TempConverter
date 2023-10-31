@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Free Temperature Converter</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="/tempc.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Join the 'Conversion' Party:</h1>
+        <p>Fizzing Up 'Fahrenheit' and Chilling with 'Celsius'"</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="f2c.html">Fahrenheit</a></li>
+            <li><a href="c2f.html">Celsius</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <img src="https://static.vecteezy.com/system/resources/previews/002/694/862/large_2x/gauge-temperature-icon-free-vector.jpg"
+                width="200px"></img>
+
+            <p>Enter a Celsius temperature to convert to Fahrenheit:</p>
+            <input type="text" id="celsiusInput">
+            <button onclick="convertAndDisplay()">Convert</button>
+            <p id="resultMessage"></p>
+
+            <script>
+                function convertAndDisplay() {
+                    const celsiusInput = document.getElementById("celsiusInput");
+                    const resultMessage = document.getElementById("resultMessage");
+
+                    const celsiusTemperature = parseFloat(celsiusInput.value);
+
+                    if (!isNaN(celsiusTemperature)) {
+                        const fahrenheitTemperature = convertToFahrenheit(celsiusTemperature);
+                        const message = createMessage(celsiusTemperature, fahrenheitTemperature);
+                        resultMessage.innerText = message;
+                    } else {
+                        resultMessage.innerText = "Please enter a valid temperature in Celsius.";
+                    }
+                }
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Jason Garcia</p>
+    </footer>
+</body>
+
+</html>
