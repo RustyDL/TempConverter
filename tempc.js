@@ -1,5 +1,5 @@
 function convertToFahrenheit(celsius) {
-  // Convert Celsius to Fahrenheit using the formula (C * 9/5) + 32
+  // Convert C to F using the formula (C * 9/5) + 32
   const fahrenheit = (celsius * 9) / 5 + 32;
   return fahrenheit;
 }
@@ -30,7 +30,6 @@ function rand(limit) {
   return Math.round(Math.random() * limit);
 }
 
-// Prompt the user to enter a any number
 const userInput = prompt("Enter any number");
 
 const fahrenheitTemperature = parseFloat(userInput);
